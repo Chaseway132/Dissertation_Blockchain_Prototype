@@ -100,6 +100,17 @@ npx hardhat node
    - Chain ID: 31337
    - Currency Symbol: ETH
 
+### Run the auto-deploying node in Docker
+
+Build and run the container from the repository root:
+
+```bash
+docker build -t charity-dao-node .
+docker run --name charity-dao-node --restart unless-stopped -p 8545:8545 charity-dao-node
+```
+
+The container starts a Hardhat JSON-RPC node on port 8545, deploys the Charity DAO contracts on startup, and keeps the node running. Configure your cloud platform to publish TCP port 8545; the RPC chain ID is 31337. This is an ephemeral development chain with public test accounts, not a production network or a place to hold real assets. Its state resets when the container is recreated.
+
 ### Starting the Frontend
 
 1. Start the frontend application:
