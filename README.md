@@ -116,7 +116,7 @@ The container starts a Hardhat JSON-RPC node on port 8545, deploys the Charity D
 1. Start the frontend application:
    ```bash
    cd charity-dao-frontend
-   npm start
+   npm run dev
    ```
 
 2. The application will automatically connect to whichever network you've configured in MetaMask

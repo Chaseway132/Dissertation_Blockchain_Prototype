@@ -36,9 +36,9 @@ REACT_APP_RPC_URL=http://localhost:8545
 
 4. Start the development server:
 ```bash
-npm start
+npm run dev
 # or
-yarn start
+yarn dev
 ```
 
 ## Smart Contract Deployment
@@ -67,6 +67,8 @@ npm run build
 # or
 yarn build
 ```
+
+Serve the production build with `npm start`. The server binds to `0.0.0.0` and uses the `PORT` environment variable, defaulting to port 3000.
 
 ## License
 
