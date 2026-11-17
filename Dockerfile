@@ -19,7 +19,13 @@ RUN mkdir -p /app/charity-dao-frontend/src/contracts
 # Pre-compile contracts so startup is fast.
 RUN npx hardhat compile
 
-RUN chmod +x ./start-node.sh
+RUN mkdir -p ./cache ./artifacts \
+    && touch ./deployedAddresses.json ./charity-dao-frontend/src/contracts/deployedAddresses.ts \
+    && chmod +x ./start-node.sh \
+    && chown node:node ./start-node.sh ./deployedAddresses.json ./charity-dao-frontend/src/contracts/deployedAddresses.ts \
+    && chown -R node:node ./cache ./artifacts
+
+USER node
 
 EXPOSE 8545
 
