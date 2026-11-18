@@ -2,7 +2,7 @@
 set -e
 
 echo "==> Starting Ganache on 127.0.0.1:8546..."
-npx ganache --host 127.0.0.1 --port 8546 --chain.chainId 1337 --wallet.mnemonic "lens test gauge page panther diagram dial slide meadow jazz action exercise" &
+npx ganache --host 127.0.0.1 --port 8546 --chain.chainId 1337 --chain.hardfork berlin --wallet.mnemonic "lens test gauge page panther diagram dial slide meadow jazz action exercise" &
 GANACHE_PID=$!
 
 echo "==> Starting the RPC and health-check proxy on 0.0.0.0:8545..."
