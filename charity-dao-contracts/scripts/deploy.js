@@ -64,6 +64,15 @@ async function main() {
     const fundAllocationWithSigner = await ethers.getContractAt("FundAllocation", fundAllocationAddress, deployer);
     await fundAllocationWithSigner.transferOwnership(charityDAOPlatformAddress);
     console.log("FundAllocation ownership transferred successfully");
+    
+    // Link VotingGovernance to ProposalManagement so the frontend never has to ask the owner to do it
+    try {
+      const pm = await ethers.getContractAt("ProposalManagement", proposalManagementAddress, deployer);
+      await (await pm.setVotingGovernanceContract(votingGovernanceAddress)).wait();
+      console.log("VotingGovernance linked to ProposalManagement");
+    } catch (linkError) {
+      console.warn("Linking step failed, continuing:", linkError.message);
+    }
 
     // Save contract addresses
     const addresses = {
