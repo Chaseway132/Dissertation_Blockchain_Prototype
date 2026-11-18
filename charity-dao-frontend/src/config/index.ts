@@ -2,14 +2,14 @@ import { ethers } from 'ethers';
 
 // Network configuration
 export const NETWORK_CONFIG = {
-  chainId: '0x539', // Localhost
-  chainName: 'Localhost 8545',
+  chainId: '0x7a69', // 31337 in hex
+  chainName: 'PrimeCloud Hardhat',
   nativeCurrency: {
     name: 'ETH',
     symbol: 'ETH',
     decimals: 18
   },
-  rpcUrls: ['http://127.0.0.1:8545/'],
+  rpcUrls: ['https://dissertation-blockchain-prototype.primecloud.cloud'],
 };
 
 // Contract configuration

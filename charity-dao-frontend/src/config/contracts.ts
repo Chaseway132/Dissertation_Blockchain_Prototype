@@ -29,9 +29,9 @@ export type ContractConfigs = typeof CONTRACT_CONFIGS;
 
 // Network configuration
 export const NETWORK_CONFIG = {
-  chainId: "0x539", // 1337 in hex
-  chainName: "Ganache",
-  rpcUrls: ["http://127.0.0.1:7545"],
+  chainId: "0x7a69", // 31337 in hex
+  chainName: "PrimeCloud Hardhat",
+  rpcUrls: ["https://dissertation-blockchain-prototype.primecloud.cloud"],
   nativeCurrency: {
     name: "ETH",
     symbol: "ETH",
