@@ -109,7 +109,7 @@ docker build -t charity-dao-node .
 docker run --name charity-dao-node --restart unless-stopped -p 8545:8545 charity-dao-node
 ```
 
-The container starts Ganache on port 8545, deploys the Charity DAO contracts on startup, and keeps the node running. Configure your cloud platform to publish TCP port 8545; the RPC chain ID is 1337. This is an ephemeral development chain using a public test mnemonic, not a production network or a place to hold real assets. Its state resets when the container is recreated.
+The container starts Ganache internally and exposes JSON-RPC plus a `/health` readiness endpoint through port 8545. It deploys the Charity DAO contracts on startup and keeps the node running. Configure your cloud platform to publish TCP port 8545; the RPC chain ID is 1337. This is an ephemeral development chain using a public test mnemonic, not a production network or a place to hold real assets. Its state resets when the container is recreated.
 
 ### Starting the Frontend
 

@@ -9,7 +9,7 @@ module.exports = {
       chainId: 1337
     },
     ganache: {
-      url: "http://127.0.0.1:8545",
+      url: "http://127.0.0.1:8546",
       chainId: 1337,
       accounts: { mnemonic: "lens test gauge page panther diagram dial slide meadow jazz action exercise" }
     }

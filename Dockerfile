@@ -14,6 +14,7 @@ COPY contracts/ ./contracts/
 COPY hardhat.config.js ./
 COPY charity-dao-contracts/ ./charity-dao-contracts/
 COPY start-node.sh ./
+COPY rpc-proxy.js ./
 RUN mkdir -p /app/charity-dao-frontend/src/contracts
 
 # Pre-compile contracts so startup is fast.
