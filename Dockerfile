@@ -5,7 +5,7 @@ RUN apk add --no-cache python3 make g++ wget bash
 
 WORKDIR /app
 
-# Install root dependencies (Hardhat and plugins).
+# Install root dependencies (Hardhat, Ganache, and plugins).
 COPY package*.json ./
 RUN npm ci
 
