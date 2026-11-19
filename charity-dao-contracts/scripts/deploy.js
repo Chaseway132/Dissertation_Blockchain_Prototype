@@ -70,6 +70,10 @@ async function main() {
       const pm = await ethers.getContractAt("ProposalManagement", proposalManagementAddress, deployer);
       await (await pm.setVotingGovernanceContract(votingGovernanceAddress)).wait();
       console.log("VotingGovernance linked to ProposalManagement");
+            await (await pm.setFundAllocationContract(fundAllocationAddress)).wait();
+      console.log("FundAllocation linked to ProposalManagement");
+      await (await pm.setDonationTrackingContract(donationTrackingAddress)).wait();
+      console.log("DonationTracking linked to ProposalManagement");
     } catch (linkError) {
       console.warn("Linking step failed, continuing:", linkError.message);
     }
